@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/bg_color"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <com.test.myshop.widget.CNiaoToolBar
+        android:id="@+id/tittle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:contentInsetEnd="56dp"
+        app:title="发布商品"
+        />
+
+        <Button
+            android:id="@+id/finish"
+            style="@style/smallRedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="14dp"
+            android:text="完成" />
+
+    <ImageView
+        android:id="@+id/fav_send_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/icon_back_32px" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1.发布商品图片（最多三张）"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:paddingLeft="10dp"
+         />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        />
+
+    <View
+        style="@style/line_vertical"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2.填写商品描述"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:paddingLeft="10dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/selector_view_block"
+        android:padding="@dimen/largePadding">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="商品名称"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="10dp"
+
+            />
+
+        <View
+            style="@style/line_horizontal"/>
+
+        <com.test.myshop.widget.ClearEditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="20dp"
+            android:hint="请输入商品名称"
+            style="@style/editText_base"
+            android:inputType="textPersonName"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/selector_view_block"
+        android:padding="@dimen/largePadding">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="商品类型"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="10dp"
+            />
+
+        <View
+            style="@style/line_horizontal"/>
+
+        <Spinner
+            android:id="@+id/spinner"
+            app:theme="@style/itemSpinnerStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:entries="@array/fav_send"
+            android:popupBackground="@color/colorPrimary">
+
+        </Spinner>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/selector_view_block"
+        android:padding="@dimen/largePadding">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="商品价格"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="10dp"
+
+            />
+        <View
+            style="@style/line_horizontal"/>
+
+
+        <com.test.myshop.widget.ClearEditText
+            android:id="@+id/price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="20dp"
+            android:hint="请输入商品价格"
+            style="@style/editText_base"
+            android:inputType="number"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/selector_view_block"
+        android:padding="@dimen/largePadding">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="联系电话"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="10dp"
+
+            />
+
+        <View
+            style="@style/line_horizontal"/>
+
+        <com.test.myshop.widget.ClearEditText
+            android:id="@+id/txt_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="20dp"
+            android:hint="请输入联系电话"
+            style="@style/editText_base"
+            android:inputType="phone"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/selector_view_block"
+        android:padding="@dimen/largePadding">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="备注"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="10dp"
+
+            />
+
+        <View
+            style="@style/line_horizontal"/>
+
+
+        <com.test.myshop.widget.ClearEditText
+            android:id="@+id/txt_note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="20dp"
+            android:hint="备注信息"
+            style="@style/editText_base"
+            android:inputType="textPersonName"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
